@@ -13,13 +13,16 @@ import logger from 'redux-logger'
 
 
 /** TODO: Create store */
-
+const storeInstance = createStore(
+    
+)
 
 
 // Be sure to add the Provider! Just wrap App with it. Don't copy and paste from lecture, that will cause issues.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
+        <Provider store={storeInstance}></Provider>
         <App />
     </React.StrictMode>
 );
