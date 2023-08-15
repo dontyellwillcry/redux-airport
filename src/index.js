@@ -10,10 +10,20 @@ import logger from 'redux-logger'
 
 
 /** TODO: Add REDUCERS */
+const listOfAirlines = (state = [], action) => {
+    if (action.type === 'ADD_AIRLINE') {
+        return [...state, action.payload]   
+    }
+    return state
+}
 
 
 /** TODO: Create store */
 const storeInstance = createStore(
+    combineReducers({
+        listOfAirlines
+    })
+    
 
 )
 
@@ -27,3 +37,4 @@ root.render(
         </Provider>
     </React.StrictMode>
 );
+
