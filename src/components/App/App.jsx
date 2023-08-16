@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import AirlineForm from "../AirlineForm/AirlineForm";
 import AirlineTable from "../AirlineTable/AirlineTable";
+import { Table } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [newAirline, addNewAirline] = useState("");
@@ -29,11 +32,17 @@ function App() {
         numberOfPlanes={numberOfPlanes}
         addNumberOfPlanes={addNumberOfPlanes}
       />
-      <table>
+      <Table striped bordered hover variant="dark">
+      <thead>
+    <tr>
+      <th>Airline</th>
+      <th>Planes Available</th>
+    </tr>
+  </thead>
         <tbody>
           <AirlineTable listOfAirlines={listOfAirlines} dispatch={dispatch} />
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 }
