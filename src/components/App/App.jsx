@@ -5,6 +5,7 @@ import AirlineTable from "../AirlineTable/AirlineTable";
 
 function App() {
   const [newAirline, addNewAirline] = useState("");
+  const [numberOfPlanes, addNumberOfPlanes] = useState("");
 
   const listOfAirlines = useSelector((store) => store.listOfAirlines);
   const dispatch = useDispatch();
@@ -13,9 +14,10 @@ function App() {
     event.preventDefault();
     dispatch({
       type: "ADD_AIRLINE",
-      payload: newAirline,
+      payload: { name: newAirline, number: numberOfPlanes },
     });
     addNewAirline("");
+    addNumberOfPlanes("");
   };
 
   return (
@@ -24,6 +26,8 @@ function App() {
         handleSubmit={handleSubmit}
         addNewAirline={addNewAirline}
         newAirline={newAirline}
+        numberOfPlanes={numberOfPlanes}
+        addNumberOfPlanes={addNumberOfPlanes}
       />
       <table>
         <tbody>

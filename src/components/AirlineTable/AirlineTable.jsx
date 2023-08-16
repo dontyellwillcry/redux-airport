@@ -4,7 +4,8 @@ function AirlineTable({ listOfAirlines }) {
       {listOfAirlines.map((airline, index) => {
         return (
           <tr key={index}>
-            <td>{airline}</td>
+            <td>{airline.name}</td>
+            <td>{airline.number}</td>
           </tr>
         );
       })}
