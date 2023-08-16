@@ -12,11 +12,11 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log("inside handleSubmit", newAirline)
     dispatch({
       type: 'ADD_AIRLINE',
       payload: newAirline
     })
+    addNewAirline('')
   }
 
   return (
@@ -24,6 +24,7 @@ function App() {
       <AirlineForm
       handleSubmit={handleSubmit}
       addNewAirline={addNewAirline}
+      newAirline={newAirline}
       
       />  
       <table>

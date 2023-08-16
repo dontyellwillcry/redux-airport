@@ -1,4 +1,4 @@
-function AirlineForm({handleSubmit, addNewAirline}) {
+function AirlineForm({handleSubmit, addNewAirline, newAirline}) {
   return (
     <>
       <h1>Redux Airport</h1>
@@ -6,6 +6,7 @@ function AirlineForm({handleSubmit, addNewAirline}) {
         <input 
         placeholder="Airline Name"
         type="text"
+        value={newAirline}
         onChange={event => addNewAirline(event.target.value)} />
         <button type="submit">Add Airline</button>
       </form>
